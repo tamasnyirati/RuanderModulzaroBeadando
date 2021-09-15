@@ -1,0 +1,1 @@
+﻿INSERT INTO [dbo].[Fuvarok] ([FeladoUgyfel], [CelCime], [FeladasCime], [FeladasDatuma], [CsomagAdatai], [Prioritasos], [KivantErkezesiDatum]) VALUES (Tesco, Budapest, Alsónémedi, 2021.09.12, 1200x800, False, )

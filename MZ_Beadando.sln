@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31624.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MZ_Beadando", "MZ_Beadando\MZ_Beadando.csproj", "{280DCCF7-DA8D-4BAB-B30E-33B4FD412356}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{280DCCF7-DA8D-4BAB-B30E-33B4FD412356}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{280DCCF7-DA8D-4BAB-B30E-33B4FD412356}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{280DCCF7-DA8D-4BAB-B30E-33B4FD412356}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{280DCCF7-DA8D-4BAB-B30E-33B4FD412356}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C217C6DE-7AC6-4E01-915A-9BC13B8E8D71}
+	EndGlobalSection
+EndGlobal

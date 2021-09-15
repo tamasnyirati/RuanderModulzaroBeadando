@@ -1,0 +1,12 @@
+D:\C#programs\Ruander\Ruander_Modulzaro_Beadando\MZ_Beadando\MZ_Beadando\bin\Debug\MZ_Beadando.exe.config
+D:\C#programs\Ruander\Ruander_Modulzaro_Beadando\MZ_Beadando\MZ_Beadando\bin\Debug\MZ_Beadando.exe
+D:\C#programs\Ruander\Ruander_Modulzaro_Beadando\MZ_Beadando\MZ_Beadando\bin\Debug\MZ_Beadando.pdb
+D:\C#programs\Ruander\Ruander_Modulzaro_Beadando\MZ_Beadando\MZ_Beadando\obj\Debug\MZ_Beadando.csproj.AssemblyReference.cache
+D:\C#programs\Ruander\Ruander_Modulzaro_Beadando\MZ_Beadando\MZ_Beadando\obj\Debug\MZ_Beadando.Form1.resources
+D:\C#programs\Ruander\Ruander_Modulzaro_Beadando\MZ_Beadando\MZ_Beadando\obj\Debug\MZ_Beadando.Properties.Resources.resources
+D:\C#programs\Ruander\Ruander_Modulzaro_Beadando\MZ_Beadando\MZ_Beadando\obj\Debug\MZ_Beadando.csproj.GenerateResource.cache
+D:\C#programs\Ruander\Ruander_Modulzaro_Beadando\MZ_Beadando\MZ_Beadando\obj\Debug\MZ_Beadando.csproj.CoreCompileInputs.cache
+D:\C#programs\Ruander\Ruander_Modulzaro_Beadando\MZ_Beadando\MZ_Beadando\obj\Debug\MZ_Beadando.exe
+D:\C#programs\Ruander\Ruander_Modulzaro_Beadando\MZ_Beadando\MZ_Beadando\obj\Debug\MZ_Beadando.pdb
+D:\C#programs\Ruander\Ruander_Modulzaro_Beadando\MZ_Beadando\MZ_Beadando\obj\Debug\MZ_Beadando.FuvarReszletei.resources
+D:\C#programs\Ruander\Ruander_Modulzaro_Beadando\MZ_Beadando\MZ_Beadando\obj\Debug\MZ_Beadando.FuvartFelvesz.resources
