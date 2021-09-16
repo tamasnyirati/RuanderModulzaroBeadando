@@ -15,10 +15,7 @@ namespace MZ_Beadando
     {
         private FuvarLista fuvarlista;
         public List<int> fuvararak = new List<int>();
-        int fuvarAra;
-        int arSqlbe;
-
-
+        int fuvarAra;       
         private Fuvar kijeloltFuvar;
         public string prefix = "[Prior]";
         string aposztrof = "'";
@@ -44,7 +41,7 @@ namespace MZ_Beadando
            
             fuvarlista = new FuvarLista();
 
-            string sql = "SELECT Id, feladoUgyfel, CelCime, FeladasCime, FeladasDatuma, CsomagAdatai, Prioritasos, KivantErkezesiDatum FROM Fuvarok";
+            string sql = "SELECT Id, feladoUgyfel, CelCime, FeladasCime, FeladasDatuma, CsomagAdatai, Prioritasos, KivantErkezesiDatum, FuvarAra FROM Fuvarok";
             string connStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\tamas\Documents\ModulZaroAB.mdf;Integrated Security=True;Connect Timeout=30";
             
             SqlDataAdapter da = new SqlDataAdapter(sql, connStr);
@@ -66,8 +63,9 @@ namespace MZ_Beadando
                     string feladasdatuma = (string)sor["FeladasDatuma"];
                     string csomagadatai = (string)sor["CsomagAdatai"];
                     string KivErkDatum = (string)sor["KivantErkezesiDatum"];
+                    int fuvarAra = (int)sor["FuvarAra"];
 
-                    Fuvar priofuvar = new Fuvar(felado, celcime, feladascime, feladasdatuma, csomagadatai, prioritas, KivErkDatum);
+                    Fuvar priofuvar = new Fuvar(felado, celcime, feladascime, feladasdatuma, csomagadatai, prioritas, KivErkDatum, fuvarAra);
                     Fuvar_lbx.Items.Add(priofuvar);
                     fuvarlista.felvesz(priofuvar);
                 }
@@ -81,11 +79,11 @@ namespace MZ_Beadando
                     string feladasdatuma = (string)sor["FeladasDatuma"];
                     string csomagadatai = (string)sor["CsomagAdatai"];
 
-                    Fuvar normalFuvar = new Fuvar(felado, celcime, feladascime, feladasdatuma, csomagadatai);
+                    Fuvar normalFuvar = new Fuvar(felado, celcime, feladascime, feladasdatuma, csomagadatai, fuvarAra);
                     Fuvar_lbx.Items.Add(normalFuvar);
                     fuvarlista.felvesz(normalFuvar);
                 }
-             
+                fuvararak.Add(fuvarAra);
             }
         }
 
@@ -114,26 +112,36 @@ namespace MZ_Beadando
                 int csomagmagassag = Convert.ToInt32(fuvartFelvesz.CsMagassag_txtbox.Text);
                 int csomagsuly = Convert.ToInt32(fuvartFelvesz.CsSuly_txtbox.Text);
 
+                fuvarAra = (csomagszelesseg + csomagmelyseg + csomagmagassag)* csomagsuly;
+
                 string csomagadatai = csomagszelesseg + "x" +  csomagmelyseg + "x" + csomagmagassag + " cm" +
                     ", " + csomagsuly + " kg";
 
                 Csomag ujcsomag = new Csomag(csomagszelesseg, csomagmagassag, csomagmelyseg, csomagsuly, felado);
-                int ar = ujcsomag.arSzamitas();
+                
                 
 
                 Fuvar ujfuvar;
                 if(prios)
                 {
-                    ujfuvar = new Fuvar(felado, celcime, feladascime, feladasdatuma, csomagadatai, prios, kivantErkDatum);
+                    if(celcime == feladascime)
+                    {
+                        fuvarAra += 2000;
+                    }
+                    else
+                    {
+                        fuvarAra += 10000;
+                    }
+
+                    ujfuvar = new Fuvar(felado, celcime, feladascime, feladasdatuma, csomagadatai, prios, kivantErkDatum, fuvarAra);
                 }
 
                 else
                 {
-                    ujfuvar = new Fuvar(felado, celcime, feladascime, feladasdatuma, csomagadatai);
+                    ujfuvar = new Fuvar(felado, celcime, feladascime, feladasdatuma, csomagadatai, fuvarAra);
+                    
                 }
-                fuvarAra = ujfuvar.FuvarAra(ujcsomag);
-                fuvararak.Add(fuvarAra);
-                
+               
                 fuvarlista.felvesz(ujfuvar);
                 Fuvar_lbx.Items.Add(ujfuvar);
 
@@ -153,6 +161,7 @@ namespace MZ_Beadando
                 string csomagAdatai = aposztrof + fuvar.CsomagAdatai + aposztrof;
                 bool prio = fuvar.Prioritas;
                 string kivErkDat = aposztrof + fuvar.KivantErkezesiDatum + aposztrof;
+                int fuvarAra = (fuvar.FuvarAra);
 
                 if(kivErkDat == "")
                 {
@@ -168,12 +177,9 @@ namespace MZ_Beadando
                     prioritassqlbe = 0;
                 }
 
-                foreach (int ar in fuvararak)
-                {
-                    arSqlbe = fuvarAra;
-                }
+                
 
-                sqlInsertQuery += $"INSERT INTO [dbo].[Fuvarok] ([FeladoUgyfel], [CelCime], [FeladasCime], [FeladasDatuma], [CsomagAdatai], [Prioritasos], [KivantErkezesiDatum], [FuvarAra]) VALUES ({felado}, {celCime}, {feladasCime}, {feladasDatuma}, {csomagAdatai}, {prioritassqlbe}, {kivErkDat}, {arSqlbe})";
+                sqlInsertQuery += $"INSERT INTO [dbo].[Fuvarok] ([FeladoUgyfel], [CelCime], [FeladasCime], [FeladasDatuma], [CsomagAdatai], [Prioritasos], [KivantErkezesiDatum], [FuvarAra]) VALUES ({felado}, {celCime}, {feladasCime}, {feladasDatuma}, {csomagAdatai}, {prioritassqlbe}, {kivErkDat}, {fuvarAra})";
             
             }
 
@@ -242,10 +248,12 @@ namespace MZ_Beadando
 
         private void arKalk_btn_Click(object sender, EventArgs e)
         {
+            int osszesFuvarAra = 0;
             foreach (Fuvar fuvar in fuvarlista.getList())
             {
-                int osszesFuvarAra = fuvar.FuvarAra;
+                osszesFuvarAra += fuvar.FuvarAra;
             }
+            MessageBox.Show($"A fuvarok összege: {osszesFuvarAra}");
         }
     }
 }

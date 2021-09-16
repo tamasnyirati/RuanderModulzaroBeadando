@@ -16,29 +16,31 @@ namespace MZ_Beadando
         public string CsomagAdatai { get; set; }
         public bool Prioritas { get; set; }
         public string KivantErkezesiDatum { get; set; }
+        public int FuvarAra { get; set; }
 
-        public Fuvar(string feladoUgyfel, string celCime, string feladasCime, string feladasDatuma, string csomagAdatai, bool prioritas, string kivantErkezesiDatum) : this(feladoUgyfel, celCime, feladasCime, feladasDatuma, csomagAdatai)
-        {
-            Prioritas = prioritas;
-            KivantErkezesiDatum = kivantErkezesiDatum;
-        }
-
-
-        public Fuvar(string feladoUgyfel, string celCime, string feladasCime, string feladasDatuma, string csomagAdatai)
+        public Fuvar(string feladoUgyfel, string celCime, string feladasCime, string feladasDatuma, string csomagAdatai, bool prioritas, string kivantErkezesiDatum, int fuvarAra)
         {
             FeladoUgyfel = feladoUgyfel;
             CelCime = celCime;
             FeladasCime = feladasCime;
             FeladasDatuma = feladasDatuma;
             CsomagAdatai = csomagAdatai;
-        }
-
-        public Fuvar(string feladoUgyfel, string celCime, string feladasCime, string feladasDatuma, string csomagAdatai, bool prioritas) : this(feladoUgyfel, celCime, feladasCime, feladasDatuma, csomagAdatai)
-        {
             Prioritas = prioritas;
+            KivantErkezesiDatum = kivantErkezesiDatum;
+            FuvarAra = fuvarAra;
         }
 
-        public int FuvarAra(Csomag csomag)
+        public Fuvar(string feladoUgyfel, string celCime, string feladasCime, string feladasDatuma, string csomagAdatai, int fuvarAra)
+        {
+            FeladoUgyfel = feladoUgyfel;
+            CelCime = celCime;
+            FeladasCime = feladasCime;
+            FeladasDatuma = feladasDatuma;
+            CsomagAdatai = csomagAdatai;
+            FuvarAra = fuvarAra;
+        }
+
+        public int FuvarArSzamitas(Csomag csomag)
         {
             int FuvarAra = csomag.arSzamitas();
             if (FeladasCime == CelCime)
