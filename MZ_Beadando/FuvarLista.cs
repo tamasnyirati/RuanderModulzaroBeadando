@@ -9,6 +9,7 @@ namespace MZ_Beadando
     class FuvarLista
     {
         private List<Fuvar> fuvarLista;
+        
 
         public delegate void listaValtozas(Fuvar fuvar);
         public event listaValtozas ujFuvar;

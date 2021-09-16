@@ -13,14 +13,20 @@ namespace MZ_Beadando
         public int Magassag { get; set; } //cm
         public int Melyseg { get; set; } //cm
         public int Suly { get; set; } //g
+        public string Csomagfeladoja { get; set; }
 
-        public Csomag(int szelesseg, int magassag, int melyseg, int suly)
+        
+
+        public Csomag(int szelesseg, int magassag, int melyseg, int suly, string csomagfeladoja)
         {
             Szelesseg = szelesseg;
             Magassag = magassag;
             Melyseg = melyseg;
             Suly = suly;
+            Csomagfeladoja = csomagfeladoja;
         }
+
+       
 
         public int arSzamitas()
         {

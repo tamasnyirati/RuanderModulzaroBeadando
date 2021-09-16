@@ -60,7 +60,8 @@ namespace MZ_Beadando
 
         public void fuvarAdataitCSVbeMent()
         {
-            File.WriteAllText("fuvar.csv", ToString());
+            File.WriteAllText("fuvar.csv", ToString(),Encoding.UTF8);
+            
         }
     }
 }

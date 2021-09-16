@@ -34,6 +34,8 @@ namespace MZ_Beadando
             this.FuvartTorol_btn = new System.Windows.Forms.Button();
             this.Fuvar_lbx = new System.Windows.Forms.ListBox();
             this.Kilepes_btn = new System.Windows.Forms.Button();
+            this.FuvAdatokMent_btn = new System.Windows.Forms.Button();
+            this.arKalk_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -73,6 +75,7 @@ namespace MZ_Beadando
             this.Fuvar_lbx.Size = new System.Drawing.Size(342, 108);
             this.Fuvar_lbx.TabIndex = 4;
             this.Fuvar_lbx.Click += new System.EventHandler(this.Fuvar_lbx_Click);
+            this.Fuvar_lbx.DoubleClick += new System.EventHandler(this.Fuvar_lbx_DoubleClick);
             // 
             // Kilepes_btn
             // 
@@ -84,11 +87,33 @@ namespace MZ_Beadando
             this.Kilepes_btn.UseVisualStyleBackColor = true;
             this.Kilepes_btn.Click += new System.EventHandler(this.Kilepes_btn_Click);
             // 
+            // FuvAdatokMent_btn
+            // 
+            this.FuvAdatokMent_btn.Location = new System.Drawing.Point(123, 223);
+            this.FuvAdatokMent_btn.Name = "FuvAdatokMent_btn";
+            this.FuvAdatokMent_btn.Size = new System.Drawing.Size(132, 23);
+            this.FuvAdatokMent_btn.TabIndex = 6;
+            this.FuvAdatokMent_btn.Text = "Fuvar adatok mentése fájlba";
+            this.FuvAdatokMent_btn.UseVisualStyleBackColor = true;
+            this.FuvAdatokMent_btn.Click += new System.EventHandler(this.FuvAdatokMent_btn_Click);
+            // 
+            // arKalk_btn
+            // 
+            this.arKalk_btn.Location = new System.Drawing.Point(300, 223);
+            this.arKalk_btn.Name = "arKalk_btn";
+            this.arKalk_btn.Size = new System.Drawing.Size(75, 23);
+            this.arKalk_btn.TabIndex = 7;
+            this.arKalk_btn.Text = "Árkalkuláció";
+            this.arKalk_btn.UseVisualStyleBackColor = true;
+            this.arKalk_btn.Click += new System.EventHandler(this.arKalk_btn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(446, 258);
+            this.Controls.Add(this.arKalk_btn);
+            this.Controls.Add(this.FuvAdatokMent_btn);
             this.Controls.Add(this.Kilepes_btn);
             this.Controls.Add(this.Fuvar_lbx);
             this.Controls.Add(this.FuvartTorol_btn);
@@ -109,6 +134,8 @@ namespace MZ_Beadando
         private System.Windows.Forms.Button FuvartTorol_btn;
         private System.Windows.Forms.ListBox Fuvar_lbx;
         private System.Windows.Forms.Button Kilepes_btn;
+        private System.Windows.Forms.Button FuvAdatokMent_btn;
+        private System.Windows.Forms.Button arKalk_btn;
     }
 }
 
