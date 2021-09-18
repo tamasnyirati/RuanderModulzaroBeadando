@@ -40,19 +40,7 @@ namespace MZ_Beadando
             FuvarAra = fuvarAra;
         }
 
-        public int FuvarArSzamitas(Csomag csomag)
-        {
-            int FuvarAra = csomag.arSzamitas();
-            if (FeladasCime == CelCime)
-            {
-                FuvarAra += FuvarAra + 2000;
-            }
-            else
-            {
-                FuvarAra += FuvarAra + 10000;
-            }
-            return FuvarAra;
-        }
+       
 
         public override string ToString()
         {
@@ -62,8 +50,9 @@ namespace MZ_Beadando
 
         public void fuvarAdataitCSVbeMent()
         {
-            File.WriteAllText("fuvar.csv", ToString(),Encoding.UTF8);
+
             
+
         }
     }
 }
