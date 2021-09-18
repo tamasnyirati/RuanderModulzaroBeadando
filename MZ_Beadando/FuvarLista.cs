@@ -12,10 +12,6 @@ namespace MZ_Beadando
         private List<Fuvar> fuvarLista;
 
 
-        // public delegate void listaValtozas(Fuvar fuvar);
-        // public event listaValtozas ujFuvar;
-        // public event listaValtozas Fuvartorlese;
-
         public FuvarLista()
         {
             fuvarLista = new List<Fuvar>();
@@ -30,7 +26,6 @@ namespace MZ_Beadando
         public bool torles(Fuvar fuvar)
         {
             bool siker = fuvarLista.Remove(fuvar);
-            //Fuvartorlese?.Invoke(fuvar);
             return siker;
         }
 
@@ -39,10 +34,7 @@ namespace MZ_Beadando
         public List<Fuvar> getList() { return fuvarLista; }
         public Fuvar getFuvar(int index) { return fuvarLista[index]; }
 
-        public void fuvarListaMentese()
-        {
-            
-        }
+       
 
     }
 }

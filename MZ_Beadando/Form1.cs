@@ -112,11 +112,19 @@ namespace MZ_Beadando
             {
 
                 string felado = fuvartFelvesz.Felado_txtbox.Text;
-                string celcime = fuvartFelvesz.CelCime_txtbox.Text;
-                string feladascime = fuvartFelvesz.FeladasCim_txtbox.Text;
+                string celCime = fuvartFelvesz.CelIrsz_txtbox.Text + " " + fuvartFelvesz.CelVaros_txtbox.Text  +" " +
+                       fuvartFelvesz.CelUtca_txtbox.Text + " " + fuvartFelvesz.CelHsz_txtBox.Text;
+
+                string feladoCime = fuvartFelvesz.FeladoIrsz_txtbox.Text + " " + fuvartFelvesz.FeladasVaros_txtbox.Text + " " +
+                       fuvartFelvesz.FeladoUtca_txtbox.Text + " " + fuvartFelvesz.FeladoHsz_txtbox.Text;
+
                 string feladasdatuma = fuvartFelvesz.FeladasDatuma_txtbox.Text;
                 bool prios = fuvartFelvesz.Prio_chkbox.Checked;
                 string kivantErkDatum = fuvartFelvesz.KivErkDat_txtbox.Text;
+
+                string ugyfelNeve = fuvartFelvesz.CimzettNeve_txtbox.Text;
+                bool cegesUgyfel = fuvartFelvesz.CegesUgyfel_chkbox.Checked;
+                Ugyfel ugyfel = new Ugyfel(ugyfelNeve, cegesUgyfel);
 
                 if (prios)
                 {
@@ -140,8 +148,8 @@ namespace MZ_Beadando
                 Fuvar ujfuvar;
                 if (prios)
                 {
-                    ujfuvar = new Fuvar(felado, celcime, feladascime, feladasdatuma, csomagadatai, prios, kivantErkDatum, fuvarAra);
-                    if (celcime == feladascime)
+                    ujfuvar = new Fuvar(felado, celCime, feladoCime, feladasdatuma, csomagadatai, prios, kivantErkDatum, fuvarAra);
+                    if (celCime == feladoCime)
                     {
                         fuvarAra += 2000;
                     }
@@ -150,14 +158,14 @@ namespace MZ_Beadando
                         fuvarAra += 10000;
                     }
 
-                    ujfuvar = new Fuvar(felado, celcime, feladascime, feladasdatuma, csomagadatai, prios, kivantErkDatum, fuvarAra);
+                    ujfuvar = new Fuvar(felado, celCime, feladoCime, feladasdatuma, csomagadatai, prios, kivantErkDatum, fuvarAra);
                     fuvararak.Add(fuvarAra);
                 }
 
                 else
                 {
                     
-                    ujfuvar = new Fuvar(felado, celcime, feladascime, feladasdatuma, csomagadatai, fuvarAra);
+                    ujfuvar = new Fuvar(felado, celCime, feladoCime, feladasdatuma, csomagadatai, fuvarAra);
                     fuvararak.Add(fuvarAra);
 
                 }
